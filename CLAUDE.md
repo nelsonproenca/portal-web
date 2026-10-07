@@ -2,8 +2,8 @@
 
 Site institucional de Nelson Proença (`nelson-proenca-info.com.br`) — apresentação profissional, vitrine de clientes/parceiros e CRM interno (leads, colaboradores, clientes, agendamentos).
 
-**Repo GitHub:** `nelsonproenca/ai-agent-playground` (nome do repo não mudou; só a pasta local foi
-renomeada — ver `CLAUDE.md` na raiz do workspace pra estrutura completa).
+**Repo GitHub:** `nelsonproenca/portal-web` (antes `ai-agent-playground`; o GitHub redireciona o
+endereço antigo — ver `CLAUDE.md` na raiz do workspace pra estrutura completa).
 
 ## Stack
 
@@ -38,7 +38,7 @@ Tabela `clientes` (Supabase) já tem `email`, `nome`, `empresa`, `logo_url`, `se
 `package.json` (desatualizado, aponta pra path/VPS antigos, não é mais usado). O `deploy.sh` builda
 este repo (`institucional/portal-web`) e envia pro path `/opt/watchtower-stack/site` na VPS.
 
-**VPS atual: `191.252.220.204`** (migrada de volta de `209.61.37.142` em 13-14/09/2026 — ver
+**VPS atual: `<IP_DA_VPS>`** (migrada de volta do IP antigo em 13-14/09/2026 — ver
 `CLAUDE.md` na raiz do workspace pro histórico completo da migração). O VPS roda Docker + Caddy na
 frente de tudo (site, n8n, portal-api, watchtower-api, claw3d, openclaw) — não mais nginx direto.
 
@@ -46,7 +46,7 @@ frente de tudo (site, n8n, portal-api, watchtower-api, claw3d, openclaw) — nã
 
 ### Issue tracker
 
-Issues e specs deste repositório vivem como GitHub Issues em `nelsonproenca/ai-agent-playground`, via CLI `gh`. Ver `docs/agents/issue-tracker.md`.
+Issues e specs deste repositório vivem como GitHub Issues em `nelsonproenca/portal-web`, via CLI `gh`. Ver `docs/agents/issue-tracker.md`.
 
 ### Domain docs
 

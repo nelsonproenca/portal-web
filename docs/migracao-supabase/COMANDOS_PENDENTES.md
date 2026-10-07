@@ -4,7 +4,7 @@ O código das fases 1 a 4 está pronto e testado localmente (ver "Resultado" no 
 é o que **só você consegue fazer** (acesso à VPS, ao n8n e à Meta) e a **ordem** é importante: o deploy da API
 aplica 2 migrations; o segredo do n8n precisa existir nos dois lados antes de publicar os fluxos.
 
-Legenda do lugar: **LOCAL** = Git Bash no seu PC, na raiz do workspace · **VPS** = PuTTY em `191.252.220.204` ·
+Legenda do lugar: **LOCAL** = Git Bash no seu PC, na raiz do workspace · **VPS** = PuTTY em `$VPS_HOST` (defina antes: `export VPS_HOST=<IP_DA_VPS>`) ·
 **n8n** = https://n8n.nelson-proenca-info.com.br · **ME** = você me chama e eu faço pelo MCP.
 
 Nada aqui imprime segredo. **Não cole segredos no chat.**
@@ -44,7 +44,7 @@ bash deploy.sh portal back
 
 O build local roda antes. Ao subir, a API aplica sozinha as migrations `AddCrm` (6 tabelas) e
 `AddClienteLoginTokens`. **Como desfazer:** o código antigo continua no histórico do repositório; as migrations só
-criam tabelas novas (não alteram as existentes). Se algo falhar: `ssh root@191.252.220.204 'docker logs portal-api --tail 50'`.
+criam tabelas novas (não alteram as existentes). Se algo falhar: `ssh root@$VPS_HOST 'docker logs portal-api --tail 50'`.
 
 ## 5. Gravar o segredo na VPS (VPS)
 
@@ -67,8 +67,8 @@ mkdir -p /root/portal-import && chmod 700 /root/portal-import
 
 ```powershell
 # LOCAL (PowerShell). Copia só tables/ e uploads/ (não os CSVs de schema).
-pscp -r E:\Backups\supabase-2026-10-02\tables root@191.252.220.204:/root/portal-import/
-pscp -r E:\Backups\supabase-2026-10-02\uploads root@191.252.220.204:/root/portal-import/
+pscp -r E:\Backups\supabase-2026-10-02\tables root@$VPS_HOST:/root/portal-import/
+pscp -r E:\Backups\supabase-2026-10-02\uploads root@$VPS_HOST:/root/portal-import/
 ```
 
 ## 7. Importar (VPS)

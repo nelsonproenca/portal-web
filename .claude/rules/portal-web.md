@@ -1,6 +1,6 @@
 # Regras do portal-web (site institucional)
 
-Vale para tudo dentro de `institucional/portal-web` (repo GitHub `nelsonproenca/ai-agent-playground`).
+Vale para tudo dentro de `institucional/portal-web` (repo GitHub `nelsonproenca/portal-web`).
 Contexto geral e deploy estão no `CLAUDE.md` desta pasta e no da raiz do workspace.
 
 ## Escopo
@@ -19,7 +19,7 @@ Contexto geral e deploy estão no `CLAUDE.md` desta pasta e no da raiz do worksp
   projeto Supabase está **pausado**: login, CRM e vitrine `/clientes` estão fora do ar até reativar ou migrar
   (pendência no `CLAUDE.md` da raiz). Não adicionar chamadas novas ao Supabase.
 - Cliente do Supabase: `src/integrations/supabase/client.ts`. `types.ts` é **gerado**, não editar à mão.
-- Chamadas ao `portal-backend` (portfólio `/projetos`, portal do cliente) passam por
+- Chamadas ao `portal-api` (portfólio `/projetos`, portal do cliente) passam por
   `src/features/portal-shared/apiClient.ts`; dados de cada domínio ficam em `src/features/<dominio>/api.ts`.
   Não usar `fetch` solto dentro de páginas ou componentes.
 - Mudança de schema = nova migration em `supabase/migrations/` (nunca editar uma já aplicada).
@@ -58,4 +58,4 @@ Contexto geral e deploy estão no `CLAUDE.md` desta pasta e no da raiz do worksp
   `package.json` está obsoleto (aponta para VPS/paths antigos): não usar.
 - Commits em português, no padrão do histórico: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, mensagem
   curta explicando o porquê. Um assunto por commit.
-- Deploy, push e qualquer ação no VPS (`191.252.220.204`) só com o pedido explícito do Nelson.
+- Deploy, push e qualquer ação no VPS (`<IP_DA_VPS>`) só com o pedido explícito do Nelson.

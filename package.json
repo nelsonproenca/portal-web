@@ -11,7 +11,7 @@
 		"preview": "vite preview",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"deploy": "tsc -b && vite build && scp -r ./dist/* root@191.252.220.204:/var/www/meu-site/"
+		"deploy": "tsc -b && vite build && scp -r ./dist/* root@$VPS_HOST:/var/www/meu-site/"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.10.0",
